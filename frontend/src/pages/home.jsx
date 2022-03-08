@@ -16,7 +16,7 @@ export default function Home() {
         <NavLeft />
         <div className="flex-r">
           <a>lang</a>
-          <Link to='/signin'><button className="btn-primary">Sign in</button></Link>
+          <Link to='/users/signin'><button className="btn-primary">Sign in</button></Link>
         </div>
       </nav>
       <div className="hero">
@@ -24,7 +24,7 @@ export default function Home() {
           <span className="serif  primary">Create logo with A.I. in 2mins</span>
           <span>
             <span className="gradient">mylogo.ai</span><span> helps you save time, cut costs and simplify your workflow.</span>
-            <div><Link to='/signup'><button className="btn-secondary">Get Started</button></Link></div>
+            <div><Link to='/users/signup'><button className="btn-secondary">Get Started</button></Link></div>
           </span>
         </div>
         <div className="hero-illustration">

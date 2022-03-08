@@ -1,0 +1,12 @@
+.left-panel-on {
+    transition: display 10s ease-out 0.5;
+    display: block;
+    height: 100vh;
+    background-color:yellow;
+    width: 40vh;
+    position: fixed;
+    right: 0;
+}
+.left-panel-off{
+    display: none;
+}
