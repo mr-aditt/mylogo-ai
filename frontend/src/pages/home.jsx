@@ -1,13 +1,15 @@
 import React from 'react'
 import NavLeft from '../component/nav-left';
-import smart_img from '../assets/smart.jpg'
-import fast_img from '../assets/smart.jpg'
-import free_img from '../assets/smart.jpg'
-import fun_img from '../assets/smart.jpg'
-// import fast_img from './assets/fast.jpg'
-// import free_img from './assets/free.jpg'
-// import fun_img from './assets/fun.jpg'
+import smart_img from '../assets/smart.png'
+import hero_img from '../assets/hero-illustration.png'
+// import fast_img from '../assets/smart.jpg'
+// import free_img from '../assets/smart.jpg'
+// import fun_img from '../assets/smart.jpg'
+import fast_img from '../assets/fast.png'
+import free_img from '../assets/free.png'
+import fun_img from '../assets/fun.png'
 import { Link } from "react-router-dom";
+import Footer from '../component/footer';
 
 export default function Home() {
   return (
@@ -15,7 +17,6 @@ export default function Home() {
       <nav className="flex-r">
         <NavLeft />
         <div className="flex-r">
-          <a>lang</a>
           <Link to='/users/signin'><button className="btn-primary">Sign in</button></Link>
         </div>
       </nav>
@@ -28,7 +29,7 @@ export default function Home() {
           </span>
         </div>
         <div className="hero-illustration">
-          <img src="./hero-illustration.PNG" alt="" />
+          <img src={hero_img} alt="" />
         </div>
       </div>
 
@@ -69,7 +70,7 @@ export default function Home() {
           </p>
         </div>
       </div>
-      
+      <Footer />
     </div>
   )
 }

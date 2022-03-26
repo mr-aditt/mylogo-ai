@@ -3,25 +3,14 @@
 /**
  * Module dependencies.
  */
-
+require('dotenv').config() 
 var app = require('../app');
 var debug = require('debug')('backend:server');
 var http = require('http');
 var mongoose = require('mongoose');
-var userSchema = require('../schema/schema')
-// const session = require('express-session');
-// const passport = require('passport');
-// const passportLocalMongoose = require('passport-local-mongoose');
-// app.use(session({
-//   secret: "our little secret",
-//   resave: false,
-//   saveUninitialized: false
-// }));
+var { User } = require('../schema/schema')
 
-// app.use(passport.initialize());
-// app.use(passport.session());
-
-const dburl='mongodb://localhost:27017/project'
+const dburl=`mongodb+srv://${process.env.MONGODB_USER_ID}:${process.env.MONGODB_USER_PASSWORD}@cluster0.fl6wx.mongodb.net/mylogo?retryWrites=true&w=majority`
 
 /**
  * Get port from environment and store in Express.
@@ -45,13 +34,6 @@ mongoose.connect(dburl).then(data=>{
   server.on('error', onError);
   server.on('listening', onListening);
 })
-// console.log(User)
-// userSchema.plugin(passportLocalMongoose)
-
-// // const User = new mongoose.model("User", userSchema);
-// passport.use(User.createStrategy());
-// passport.serializeUser(User.serializeUser())
-// passport.deserializeUser(User.deserializeUser())
 
 /**
  * Normalize a port into a number, string, or false.

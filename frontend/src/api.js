@@ -1,19 +1,25 @@
 import axios from 'axios';
 
-export const getUsers = ()=>{
-    return axios.get('http://localhost:5000/users/').then(
+export const getData = ()=>{
+    return axios.get('https://mylogo-backend.herokuapp.com/').then(
         data=>data.data
     )
 }
 
 export const register = async (useremail, password)=>{
-    return axios.post('http://localhost:5000/users/signup', { useremail, password }).then(
+    return axios.post(`https://mylogo-backend.herokuapp.com/users/signup`, { useremail, password }).then(
         data => data.data
     );
 }
 
 export const login = async (useremail, password)=>{
-    return axios.post('http://localhost:5000/users/signin', { useremail, password }).then(
+    return axios.post(`https://mylogo-backend.herokuapp.com/users/signin`, { useremail, password }).then(
         data => data.data
     );
+}
+
+export const upload = async (data)=>{
+    return axios.post(`https://mylogo-backend.herokuapp.com/users/upload`, data).then(
+        res=>console.log(res)
+    )
 }
